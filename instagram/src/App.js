@@ -5,6 +5,7 @@ import posts, { logoUrl } from './db/dummy-data';
 import './App.css';
 
 import Bar from './components/Bar/Bar';
+import Post from './components/Post/Post';
 
 class App extends Component {
   state = {
@@ -22,6 +23,8 @@ class App extends Component {
   }
 
   render() {
+    const posts = this.state.posts.map(post => <Post key={post.timestamp} {...post} />);
+    
     return (
       <>
         <Bar 
@@ -29,6 +32,7 @@ class App extends Component {
           isSearching={this.state.isSearching}
           logo={logoUrl}
         />
+        {posts}
       </>
     );
   }

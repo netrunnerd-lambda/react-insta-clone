@@ -28,7 +28,7 @@ class NavLinks extends Component {
 
     return (
       <>
-        {links.map(link => <a href={link.target} onClick={this.handleClick}>
+        {links.map(link => <a key={link.target} href={link.target} onClick={this.handleClick}>
                              <link.icon size="25px" strokeWidth="1" />
                            </a>)}
       </>

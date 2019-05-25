@@ -7,6 +7,7 @@ import NavBar from './BarNav';
 
 const Container = styled.header`
   align-items: center;
+  background-color: #fff;
   border-bottom: 1px solid #e6e6e6;
   display: flex;
   justify-content: space-evenly;
