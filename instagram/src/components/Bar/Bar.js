@@ -17,7 +17,8 @@ const Container = styled.header`
 const Bar = props => (
   <Container>
     <Brand logo={props.logo} />
-    <SearchBar 
+    <SearchBar
+      handleChange={props.handleChange}
       handleStatus={props.handleStatus}
       isSearching={props.isSearching} 
     />
