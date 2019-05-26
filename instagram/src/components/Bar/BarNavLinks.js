@@ -11,10 +11,6 @@ class NavLinks extends Component {
       {
         target: '/accounts/activity',
         icon: Heart
-      },
-      {
-        target: '/user',
-        icon: User
       }
     ]
   };
@@ -23,14 +19,27 @@ class NavLinks extends Component {
     e.preventDefault();
   };
 
+  handleLogout = e => {
+    window.localStorage.removeItem('username');
+  };
+
+  renderLink(link) {
+    return (
+      <a key={link.target} href={link.target} onClick={this.handleClick}>
+        <link.icon size="25px" strokeWidth="1" />
+      </a>
+    );
+  }
+
   render() {
     const links = this.state.links;
 
     return (
       <>
-        {links.map(link => <a key={link.target} href={link.target} onClick={this.handleClick}>
-                             <link.icon size="25px" strokeWidth="1" />
-                           </a>)}
+        {links.map(link => this.renderLink(link))}
+        <a key="/logout" href="/" onClick={this.handleLogout}>
+          <User size="25px" strokeWidth="1" />
+        </a>
       </>
     );
   }
