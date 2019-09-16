@@ -1,3 +1,5 @@
+export const logoUrl = "https://i.imgur.com/UK4d262.png";
+
 const dummyData = [
   {
     username: "philzcoffee",
